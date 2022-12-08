@@ -17,14 +17,14 @@
 
 #include "plansys2_bt_example/behavior_tree_nodes/OpenGripper.hpp"
 
-#include "behaviortree_cpp_v3/behavior_tree.h"
+#include "behaviortree_cpp/behavior_tree.h"
 
 namespace plansys2_bt_example
 {
 
 OpenGripper::OpenGripper(
   const std::string & xml_tag_name,
-  const BT::NodeConfiguration & conf)
+  const BT::NodeConfig & conf)
 : BT::ActionNodeBase(xml_tag_name, conf), counter_(0)
 {
 }
@@ -50,7 +50,7 @@ OpenGripper::tick()
 
 }  // namespace plansys2_bt_example
 
-#include "behaviortree_cpp_v3/bt_factory.h"
+#include "behaviortree_cpp/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
   factory.registerNodeType<plansys2_bt_example::OpenGripper>("OpenGripper");
